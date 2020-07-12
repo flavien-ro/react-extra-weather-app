@@ -67,7 +67,7 @@
 
 .chat-form input {
     background: #fbfbfb;
-    width: 90%;
+    width: 97%;
     border: 2px solid #eee;
 }
 
@@ -87,10 +87,35 @@
     .meteo-card {
         padding-top: 15%;
     }
+    .loader-chatbot {
+        padding-top: 20%;
+        padding-bottom: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .waiter-chatbot {
+        padding-top: 0;
+        padding-bottom: 10%;
+        text-align: center;
+    }
 }
 
 @media (min-height: 800px) {
     .main-chatbot {
         min-height: 90vh;
+    }
+    .loader-chatbot {
+        padding-right: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .waiter-chatbot {
+        text-align: center;
+        padding-top: 0;
+        padding-bottom: 20%;
     }
 }

@@ -4,6 +4,7 @@ import MessageForm from "./message_form"
 import MessageList from "./messages_list"
 import axios from 'axios';
 import Robot from "./assets/img/friend.png"
+import Loader from 'react-loader-spinner'
 
 function get_first_chars(str) {
     var res = String(str).substring(0, 2);
@@ -20,7 +21,7 @@ class Chatbot extends Component {
         this.state = {
           messages: [],
           result: "",
-          icon: "Clouds.png"
+          icon: "Clouds.png",
         }
       }
     
@@ -105,7 +106,14 @@ class Chatbot extends Component {
                         </div>
                 )
             } else {
-                return null;
+                return (
+                    <div className="loader-chatbot">
+                        <div className="waiter-chatbot">
+                            <h2>Waiting for city ...</h2>
+                        </div>
+                        <Loader type="Audio" color="#00BFFF" height={130} width={130} />
+                    </div>
+                )
             }
         }
         return (

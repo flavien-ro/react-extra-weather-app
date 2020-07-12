@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../CSS/classic.css';
 import axios from 'axios';
+import Loader from 'react-loader-spinner'
 
 function get_first_chars(str) {
     var res = String(str).substring(0, 2);
@@ -30,7 +31,6 @@ class Classic extends Component {
         const card = document.getElementsByClassName('place-classic')[0];
         const error = document.getElementById("city-weather");
         const get_coord = card.getBoundingClientRect();
-        console.log(get_coord.left)
         if (get_coord.left === 0) {
             card.classList.toggle('active-card');
         }
@@ -89,7 +89,7 @@ class Classic extends Component {
                                 <h3>{result['list']['0']['weather']['0']['main']}<span>Wind {result['list']['0']['wind']['speed']} km/h<span class="dot">•</span></span></h3>
                                 <h1>{String(result['list']['0']['main']['temp']).substring(0, 4)}°</h1>
                                 <div style={{marginTop: "35px"}}>
-                                    <img src={require("./assets/img/Clear.png")} width="120" height="120" alt="icon"/>
+                                    <img src={require(icon)} width="120" height="120" alt="icon"/>
                                 </div>
                                 <table>
                                     <tr>
@@ -117,29 +117,44 @@ class Classic extends Component {
                         </div>
                 )
             } else {
+                return false;
+            }
+        }
+        function Waiting () {
+            if (MeteoCard() === false) {
+                return (                    
+                    <div className="loader-classic">
+                        <h2>Waiting for city ...</h2>
+                        <Loader type="Audio" color="#00BFFF" height={130} width={130} />
+                    </div>
+                );
+            } else {
                 return null;
             }
         }
         function City_error () {
             if (error) {
                 return (
-                    <form className="form-inline">
+                    <form className="form-inline form-classic">
                         <div className="title-classic">
                             <h3 style={{opacity: 0}}>Classic Version: </h3>
                         </div>
                         <div id="city-weather" className="form-group mb-2 input-get-weather">
                             <div className="error">{error}</div>
                         </div>
+                        <div className="btn-parent">
+                            <button type="submit" className="btn btn-primary mb-2 btn-get-weather error-btn">Get Weather</button>
+                        </div>
                     </form>
                 )
             } else {
-                return null; 
+                return null;
             }
         }
         return (
             <body className="main-classic">
                 <div className="header-classic">
-                    <form className="form-inline" onSubmit={this.handleFormSubmit}>
+                    <form className="form-inline form-classic" onSubmit={this.handleFormSubmit}>
                         <div className="title-classic">
                             <h3>Classic Version: </h3>
                         </div>
@@ -151,6 +166,7 @@ class Classic extends Component {
                         </div>
                     </form>
                     <City_error/>
+                    <Waiting/>
                 </div>
                 <div className="place-classic">
                     <MeteoCard/>

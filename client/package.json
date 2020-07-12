@@ -6,18 +6,19 @@
     "@progress/kendo-react-buttons": "^3.14.0",
     "@progress/kendo-react-conversational-ui": "^3.14.0",
     "@progress/kendo-react-intl": "^3.14.0",
+    "axios": "^0.17.1",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-autocomplete": "^1.2.6",
+    "react-loader-spinner": "^3.1.14",
     "react-places-autocomplete": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "0.9.5",
     "react-simple-chatbot": "^0.6.1",
     "styled-components": "^5.1.1",
     "video-react": "^0.14.1",
-    "vissense": "^0.10.0",
-    "axios": "^0.17.1"
+    "vissense": "^0.10.0"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0"

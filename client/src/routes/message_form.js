@@ -20,15 +20,16 @@ class MessageForm extends Component {
   render() {
     return (
       <form className="chat-form" onSubmit={this.handleFormSubmit}>
-        <div>
+        <div className="space-it">
           <input
             type="text"
+            className="form-control"
             ref={(node) => (this.input = node)}
-            placeholder="Enter your message..."
+            placeholder="Type a message ...."
           />
         </div>
         <div>
-          <button type="submit">
+          <button type="submit" className="btn btn-primary mb-2">
             Send
           </button>
         </div>

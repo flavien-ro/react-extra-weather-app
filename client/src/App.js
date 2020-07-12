@@ -5,7 +5,6 @@ import './CSS/App.css';
 import chatbot_page from './routes/chatbot_page';
 import classic_weather from './routes/classic_weather'
 
-
 class App extends Component {
   render() {
     return (

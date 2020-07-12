@@ -5,10 +5,7 @@
     height: auto;
     min-height: 90vh;
     scroll-behavior: smooth;
-}
-
-.header-classic {
-    padding-left: 10%;
+    overflow: hidden;
 }
 
 .title-classic {
@@ -20,6 +17,10 @@
     font-size: 40px;
 }
 
+.error-btn {
+    opacity: 0;
+}
+
 .error {
     color: red;
 }
@@ -29,12 +30,24 @@
         padding-left: 2%;
     }
     .place-classic {
-        padding: 0;
         translate: -50%;
         transition: 1s;
+        overflow: hidden;
     }
     .active-card {
-        translate: -5%;
+        transform: translate(50%);
+    }
+    .loader-classic {
+        padding-top: 6%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-classic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -45,12 +58,25 @@
     .place-classic {
         translate: -50%;
         transition: 1s;
+        overflow: hidden;
     }
     .active-card {
         transform: translate(50%);
     }
     .btn-parent {
         padding-left: 2%;
+    }
+    .loader-classic {
+        padding-top: 6%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-classic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -70,9 +96,17 @@
     }
     .place-classic {
         padding: 10%;
+        overflow: hidden;
     }
     .btn-parent {
         padding-left: 2%;
+    }
+    .loader-classic {
+        padding-top: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -83,6 +117,7 @@
     }
     .header-classic {
         padding-top: 20%;
+        padding-left: 10%;
     }
     .title-classic h3 {
         font-size: 30px;
@@ -102,5 +137,11 @@
     }
     .place-classic {
         padding: 10%;
+        overflow: hidden;
+    }
+    .loader-classic {
+        padding-top: 15%;
+        display: flex;
+        flex-direction: column;
     }
 }

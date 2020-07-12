@@ -1,0 +1,106 @@
+.main-classic {
+    margin: auto;
+    background-color: #f2f2f2;
+    padding-top: 10%;
+    height: auto;
+    min-height: 90vh;
+    scroll-behavior: smooth;
+}
+
+.header-classic {
+    padding-left: 10%;
+}
+
+.title-classic {
+    padding-left: 0;
+    padding-right: 10%;
+}
+
+.title-classic h3 {
+    font-size: 40px;
+}
+
+.error {
+    color: red;
+}
+
+@media (min-width: 1500px) {
+    .btn-parent {
+        padding-left: 2%;
+    }
+    .place-classic {
+        padding: 0;
+        translate: -50%;
+        transition: 1s;
+    }
+    .active-card {
+        translate: -5%;
+    }
+}
+
+@media(max-width: 1500px) {
+    .header-classic {
+        padding-top: 1%;
+    }
+    .place-classic {
+        translate: -50%;
+        transition: 1s;
+    }
+    .active-card {
+        transform: translate(50%);
+    }
+    .btn-parent {
+        padding-left: 2%;
+    }
+}
+
+@media(max-width: 1200px) {
+    .header-classic {
+        padding-top: 5%;
+    }
+    .title-classic h3 {
+        font-size: 30px;
+    }
+    .title-classic {
+        text-align: center;
+    }
+    .input-get-weather input {
+        width: 90%;
+        height: auto;
+    }
+    .place-classic {
+        padding: 10%;
+    }
+    .btn-parent {
+        padding-left: 2%;
+    }
+}
+
+@media (max-width: 820px) {
+    .main-classic {
+        height: auto;
+        min-height: 90vh;
+    }
+    .header-classic {
+        padding-top: 20%;
+    }
+    .title-classic h3 {
+        font-size: 30px;
+    }
+    .input-get-weather {
+        width: 100% !important;
+    }
+    .input-get-weather input {
+        width: 90% !important;
+    }
+    .btn-parent {
+        padding: 0;
+        width: 100% !important;
+    }
+    .btn-get-weather {
+        width: 90% !important;
+    }
+    .place-classic {
+        padding: 10%;
+    }
+}

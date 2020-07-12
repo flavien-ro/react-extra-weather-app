@@ -1,0 +1,96 @@
+.main-chatbot {
+    margin: auto;
+    display: flex;
+    background-color: #f2f2f2;
+    padding: 10%;
+    height: 90vh;
+    align-items: center;
+    justify-content: space-around;
+    scroll-behavior: smooth;
+}
+
+.chatlogs {
+    padding: 15px;
+    width: 100%;
+    height: 450px;
+    background: #eee;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chatlogs::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.chat {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.chat .user-photo {
+    width: 30px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.chat .chat-message {
+    width: 80%;
+    padding: 5px;
+    margin: 1px 2px 0px;
+    background: #1ddced;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.friend .chat-message {
+    background: #1adda4;
+}
+
+.self .chat-message {
+    background: #1ddced;
+    order: -1;
+}
+
+.chat-form {
+    margin-top: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.chat-form input {
+    background: #fbfbfb;
+    width: 90%;
+    border: 2px solid #eee;
+}
+
+@media (max-width: 980px) {
+    .main-chatbot {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding-top: 30%;
+    }
+    .title-chatbot {
+        text-align: center;
+    }
+    .title-chatbot h1 {
+        font-size: 30px;
+    }
+    .meteo-card {
+        padding-top: 15%;
+    }
+}
+
+@media (min-height: 800px) {
+    .main-chatbot {
+        min-height: 90vh;
+    }
+}

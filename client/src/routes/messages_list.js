@@ -27,7 +27,7 @@ class MessageList extends Component {
               <div key={i}>
                 <div className="user-photo"></div>
                     <div className={"chat " + message.class}>
-                    <div><img src={require("./assets/img/" + message.class + ".png")} width="30" height="30"/></div>
+                    <div><img src={require("./assets/img/" + message.class + ".png")} width="30" height="30" alt="profile"/></div>
                     <p className="chat-message" ref={(el) => { this.messagesEnd = el; }}>{message.body}</p>
                 </div>
             </div>

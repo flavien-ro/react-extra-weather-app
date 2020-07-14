@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
-import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from 'react';
+import {Link} from "react-router-dom";
 import '../CSS/home.css';
 import { useEffect } from 'react';
-import sun from "./assets/img/sun.png";
 import logo from "./assets/img/logo.png";
-import rainy from "./assets/img/rainy.jpg"
 import linkedin from "./assets/img/linkedin.png"
 import github from "./assets/img/github.png"
 import Chabot_video from "./assets/videos/chabot_video.mp4"
@@ -13,6 +11,7 @@ import Chatbot from "./assets/videos/chatbot.webm"
 import Classic_mp4 from "./assets/videos/Classic_version.mp4"
 import Classic_ogg from "./assets/videos/Classic_version.ogg"
 import Classic_webm from "./assets/videos/Classic_version.webm"
+import Clock from 'react-live-clock';
 
 function scroll_how_to() {
     var element_resp = document.querySelector("#resp");
@@ -56,8 +55,8 @@ function Home() {
         <body>
             <nav className="navbar">
                 <div className="logo">
-                    <img src={logo}/>
-                    <h3 className="weather">Weather app</h3>
+                    <img src={logo} alt="logo"/>
+                    <h3 className="weather">Extra weather</h3>
                 </div>
                 <a className="toggle-button">
                     <span className="bar"></span>
@@ -81,9 +80,9 @@ function Home() {
             <section className="section-home">
                 <div className="pres-text">
                     <div className="presentation">
-                        <h1 className="presentation-text">Wanna use this Weather application Chatbot or Classic?</h1>
+                        <h1 className="presentation-text">Extra weather application, Chatbot or Classic?</h1>
                         <h3 className="under-title">You have 2 options : Ask the weather to the chatbot or
-                            the classic way
+                            enter a city in the the classic version
                         </h3>
                         <div className="button-how-to-use">
                             <button id="btn-htw" className="how-to-use"> <a onClick={scroll_how_to}>How to use</a></button>
@@ -91,10 +90,11 @@ function Home() {
                     </div>
                 </div>
                 <div className="place-card">
-                    <div className="card">
+                    <div className="card size-card">
                         <h2>Brussels</h2>
                         <h3>Cloudy<span>Wind 10km/h <span className="dot">•</span></span></h3>
                         <h1>23°</h1>
+                        <h3><Clock format={'HH:mm'} ticking={true} timezone={'Europe/Brussels'} /></h3>
                         <div className="sky">
                             <div className="sun"></div>
                             <div className="cloud">
@@ -157,8 +157,8 @@ function Home() {
                 <div className="footer-container">
                     <p className="copyright">&copy; Copyright flavien-ro 2020</p>
                     <div className="logo-links">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/flavien-roche"><img style={{height: "4vh"}} src={linkedin}/></a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/flavien-ro/react-extra-weather-app"><img style={{height: "4vh"}} src={github}/></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/flavien-roche"><img style={{height: "4vh"}} src={linkedin} alt="linkeding"/></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/flavien-ro/react-extra-weather-app"><img style={{height: "4vh"}} src={github} alt="github"/></a>
                     </div>
                 </div>
             </footer>

@@ -10,26 +10,31 @@
 }
 
 .under-title  {
-    font-size: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #fafafa;
 }
 
 .button-how-to-use {
     padding-top: 10%;
-    text-align: center;
 }
+
 .presentation-text {
-    font-weight: 900;
-    font-size: 45px;
+    font-weight: 500;
+    font-size: 44px;
+    background: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .how-to-use {
-    border: solid 5px #eb7434;
+    border: solid 3px #eb7434;
     background: transparent;
     padding: 10px 20px;
     color: white;
     cursor: pointer;
-    font-weight: bold;
     font-size: 25px;
+    border-radius: 12px;
     font-family: 'montserrat', sans-serif;
 }
 
@@ -40,6 +45,7 @@
 
 .how-to-use:hover {
     background-color: #eb7434;
+    transition: background 0.2s ease-in-out;
 }
 
 .logo {
@@ -48,7 +54,9 @@
 }
 
 .pres-text {
+    flex: 1;
     padding-top: 6%;
+    color: white;
 }
 
 .presentation {
@@ -59,19 +67,23 @@
     display: flex;
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 10%;
-    background: url("../routes/assets/img/rainy.jpg");
+    align-items: center;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    background-blend-mode: darken;
 }
+
 .navbar {
     position: fixed;
     display: flex;
     justify-content: space-around;
     align-items: center;
     vertical-align: middle;
-    background-color: #333;
     color: white;
-    width: 100%;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 100%);    width: 100%;
     font-family: 'Roboto', sans-serif;
     z-index: 999;
 }
@@ -92,7 +104,7 @@
 }
 
 .nav-links li:hover {
-    background-color: #555;
+    opacity: 0.2;
     width: 100%;
     height: 100%;
 }
@@ -128,15 +140,20 @@
         flex-direction: column;
         align-items: flex-start;
     }
+    .button-how-to-use {
+        text-align: center;
+        padding-bottom: 10%;
+    }
     .toggle-button {
         display: flex;
     }
     .presentation-text {
-        font-size: 24px;
+        font-size: 28px;
         text-align: center;
     }
     .under-title  {
         font-size: 18px;
+        text-align: center;
     }
     .nav-links {
         display: none;
@@ -218,8 +235,8 @@
 
 .footer-home {
     height: 10vh;
-    background-color: #333;
-    color: white;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 100%);    width: 100%;    color: white;
     width: 100%;
 }
 
@@ -266,7 +283,7 @@
 }
 
 .place-card {
-    padding: 0;
+    flex: 1;
 }
 
 @-webkit-keyframes open {

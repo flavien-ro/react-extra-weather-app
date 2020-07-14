@@ -5,14 +5,13 @@ import MessageList from "./messages_list"
 import axios from 'axios';
 import Robot from "./assets/img/friend.png"
 import Loader from 'react-loader-spinner'
+import Clock from 'react-live-clock';
+
+var cityTimezones = require('city-timezones');
 
 function get_first_chars(str) {
     var res = String(str).substring(0, 2);
     return (res)
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 class Chatbot extends Component {
@@ -72,13 +71,15 @@ class Chatbot extends Component {
         weekday[6] = "Sat";
         function MeteoCard () {
             if (result) {
-                return (
+                const cityLookup = cityTimezones.lookupViaCity(result['city']['name']);
+                return (                    
                         <div className="card">
                             <h2>{result['city']['name']}</h2>
                                 <h3>{result['list']['0']['weather']['0']['main']}<span>Wind {result['list']['0']['wind']['speed']} km/h<span class="dot">•</span></span></h3>
                                 <h1>{String(result['list']['0']['main']['temp']).substring(0, 4)}°</h1>
+                                <h3><Clock format={'HH:mm'} ticking={true} timezone={cityLookup['0']['timezone']} /></h3>
                                 <div style={{marginTop: "35px"}}>
-                                    <img src={require(icon)} width="120" height="120"/>
+                                    <img src={require(icon)} width="120" height="120" alt="meteo-icon"/>
                                 </div>
                                 <table>
                                     <tr>
@@ -124,7 +125,7 @@ class Chatbot extends Component {
                 <div className="card">
                     <div className="chatlogs">
                         <div className="chat friend">
-                            <div className="user-photo"><img src={Robot} width="30" height="30"/></div>
+                            <div className="user-photo"><img src={Robot} width="30" height="30" alt="robot"/></div>
                             <p className="chat-message">Hello ask me the weather of a specific city :)</p>
                         </div>
                             <MessageList messages={this.state.messages}/>

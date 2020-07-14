@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import '../CSS/classic.css';
 import axios from 'axios';
 import Loader from 'react-loader-spinner'
+import Clock from 'react-live-clock';
+
+var cityTimezones = require('city-timezones');
 
 function get_first_chars(str) {
     var res = String(str).substring(0, 2);
@@ -29,7 +32,6 @@ class Classic extends Component {
 
     handleInput = (input) => {
         const card = document.getElementsByClassName('place-classic')[0];
-        const error = document.getElementById("city-weather");
         const get_coord = card.getBoundingClientRect();
         if (get_coord.left === 0) {
             card.classList.toggle('active-card');
@@ -83,12 +85,15 @@ class Classic extends Component {
         weekday[6] = "Sat";
         function MeteoCard () {
             if (result) {
+                const cityLookup = cityTimezones.lookupViaCity(result['city']['name'])
+                console.log(cityLookup['0']['timezone'])
                 return (
                         <div className="card">
                             <h2>{result['city']['name']}</h2>
                                 <h3>{result['list']['0']['weather']['0']['main']}<span>Wind {result['list']['0']['wind']['speed']} km/h<span class="dot">•</span></span></h3>
                                 <h1>{String(result['list']['0']['main']['temp']).substring(0, 4)}°</h1>
                                 <div style={{marginTop: "35px"}}>
+                                    <h3><Clock format={'HH:mm'} ticking={true} timezone={cityLookup['0']['timezone']} /></h3>
                                     <img src={require(icon)} width="120" height="120" alt="icon"/>
                                 </div>
                                 <table>
@@ -124,7 +129,9 @@ class Classic extends Component {
             if (MeteoCard() === false) {
                 return (                    
                     <div className="loader-classic">
-                        <h2>Waiting for city ...</h2>
+                        <div className="clear-space">
+                            <h2>Waiting for city ...</h2>
+                        </div>
                         <Loader type="Audio" color="#00BFFF" height={130} width={130} />
                     </div>
                 );
@@ -132,7 +139,7 @@ class Classic extends Component {
                 return null;
             }
         }
-        function City_error () {
+        function Cityerror () {
             if (error) {
                 return (
                     <form className="form-inline form-classic">
@@ -165,7 +172,7 @@ class Classic extends Component {
                             <button type="submit" className="btn btn-primary mb-2 btn-get-weather">Get Weather</button>
                         </div>
                     </form>
-                    <City_error/>
+                    <Cityerror/>
                     <Waiting/>
                 </div>
                 <div className="place-classic">

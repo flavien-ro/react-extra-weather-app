@@ -71,7 +71,7 @@ class Chatbot extends Component {
         weekday[6] = "Sat";
         function MeteoCard () {
             if (result) {
-                const cityLookup = cityTimezones.lookupViaCity(result['city']['name']);
+                const cityLookup = cityTimezones.modules['lookupViaCity'](result['city']['name'])
                 return (                    
                         <div className="card">
                             <h2>{result['city']['name']}</h2>

@@ -85,7 +85,7 @@ class Classic extends Component {
         weekday[6] = "Sat";
         function MeteoCard () {
             if (result) {
-                const cityLookup = cityTimezones.lookupViaCity(result['city']['name'])
+                const cityLookup = cityTimezones.modules['lookupViaCity'](result['city']['name'])
                 console.log(cityLookup['0']['timezone'])
                 return (
                         <div className="card">

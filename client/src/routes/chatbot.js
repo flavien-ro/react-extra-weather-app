@@ -72,6 +72,8 @@ class Chatbot extends Component {
         function MeteoCard () {
             if (result) {
                 const cityLookup = cityTimezones.modules['lookupViaCity'](result['city']['name'])
+                if (cityLookup[0] === undefined)
+                    cityLookup[0] = "ERROR CITY"
                 return (                    
                         <div className="card">
                             <h2>{result['city']['name']}</h2>
